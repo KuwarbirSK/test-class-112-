@@ -1,5 +1,3 @@
-//Teachable maching link - https://teachablemachine.withgoogle.com/models/Dw_hS-ogt/
-
 prediction_1 = "";
 prediction_2 = "";
 
@@ -14,17 +12,13 @@ camera = document.getElementById("camera");
 
 Webcam.attach('#camera');
 
-function take_snapshot(){
-    Webcam.snap(function(data_uri){
-        document.getElementById("result").innerHTML = '<img id="captured_image" src="'+data_uri+'"/>';
-    });
-}
-
-
+function take_snapshot() { 
+    Webcam.snap(function(data_uri) { document.getElementById("result").innerHTML = '<img id="captured_image" src="'+data_uri+'"/>'; 
+}); }
 
 console.log('ml5 version:', ml5.version);
 
-classsifier = ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/Dw_hS-ogt/model.json",modelLoaded);
+classifier = ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/Dw_hS-ogt/model.json",modelLoaded);
 
 function modelLoaded(){
     console.log('Model Loaded');
